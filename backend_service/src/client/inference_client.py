@@ -9,7 +9,7 @@ from typing import Dict, Any
 import httpx
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-from ...utils.logger import get_logger
+from ..utils.logger import get_logger
 
 logger = get_logger("Backend_Client")
 

@@ -13,6 +13,7 @@ sys.path.insert(0, str(project_root))
 os.chdir(project_root)
 
 from src.config.env_loader import load_config
+from src.config import ConfigManager
 from src.utils.logger import setup_logging, get_logger
 from src.api.dependencies import init_dependencies
 from src.api.routes import system, extract, file
@@ -108,8 +109,12 @@ def create_app():
         logger.error(f"MySQL数据库连接初始化失败: {str(e)}")
         db_connection = None
 
+    # 初始化配置管理器
+    config_manager = ConfigManager()
+
     # 初始化依赖项（移除model_manager，使用inference_client）
     init_dependencies(
+        config_manager=config_manager,
         project_root=project_root,
         db_connection=db_connection
     )
@@ -187,6 +192,10 @@ def _cleanup_old_logs(log_dir: Path, retention_days: int = 30) -> None:
 
         # 记录清理结果
         if deleted_count > 0:
-            logger = logging.getLogger("Backend_API")
+            logger = get_logger("Backend_API")
             logger.info(f"日志清理完成: 删除了 {deleted_count} 个超过 {retention_days} 天的日志文件")
             logger.debug(f"已删除的日志文件: {', '.join(deleted_files)}")
+    except Exception as e:
+        # 清理日志时出错，记录但不影响主程序启动
+        logger = get_logger("Backend_API")
+        logger.warning(f"清理旧日志文件时出错: {str(e)}")

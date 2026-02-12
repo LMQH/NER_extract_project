@@ -3,7 +3,6 @@
 # Web框架
 fastapi>=0.104.0
 uvicorn[standard]>=0.24.0
-annotated-types>=0.6.0
 pydantic>=2.0.0
 
 # HTTP客户端
@@ -16,11 +15,3 @@ python-dotenv>=1.0.0
 # 数据库
 pymysql>=1.1.0
 redis>=5.0.0
-
-# 文件处理
-python-docx>=1.1.0
-PyPDF2>=3.0.0
-pypdf>=3.0.0
-
-# 其他
-requests>=2.28.0

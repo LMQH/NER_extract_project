@@ -1,6 +1,10 @@
 # Python
 __pycache__/
+**/__pycache__/
 *.py[cod]
+*.pyc
+*.pyo
+*.pyd
 *$py.class
 *.so
 .Python
@@ -55,11 +59,20 @@ dev.env
 prod.env
 show.env
 
-# Logs
+# Logs - 所有日志文件和日志目录
 *.log
-logs/
-inference_*.log
 *.log.*
+**/*.log
+**/*.log.*
+logs/
+**/logs/
+inference_*.log
+backend_*.log
+app.log
+error.log
+access.log
+*.log.gz
+*.log.zip
 
 # Model Files (通常很大，不应提交到git)
 models/
