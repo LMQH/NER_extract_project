@@ -92,7 +92,7 @@ def create_app():
     )
 
     # 记录推理服务URL
-    inference_url = os.getenv('INFERENCE_SERVICE_URL', 'http://localhost:14467')
+    inference_url = os.getenv('INFERENCE_SERVICE_URL', 'http://localhost:13111')
     logger.info(f"推理服务URL: {inference_url}")
 
     # 初始化依赖项（传入推理服务客户端，而非模型管理器）

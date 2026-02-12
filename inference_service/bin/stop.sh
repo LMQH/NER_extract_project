@@ -32,11 +32,11 @@ fi
 # 如果没有从PID文件找到，则通过端口查找（前台运行模式）
 if [ -z "$PID" ]; then
     if command -v lsof &> /dev/null; then
-        PID=$(lsof -ti:8000 2>/dev/null)
+        PID=$(lsof -ti:13111 2>/dev/null)
     elif command -v netstat &> /dev/null; then
-        PID=$(netstat -tlnp 2>/dev/null | grep :8000 | awk '{print $7}' | cut -d'/' -f1 | head -1)
+        PID=$(netstat -tlnp 2>/dev/null | grep :13111 | awk '{print $7}' | cut -d'/' -f1 | head -1)
     elif command -v ss &> /dev/null; then
-        PID=$(ss -tlnp 2>/dev/null | grep :8000 | awk '{print $NF}' | cut -d',' -f2 | cut -d'=' -f2 | head -1)
+        PID=$(ss -tlnp 2>/dev/null | grep :13111 | awk '{print $NF}' | cut -d',' -f2 | cut -d'=' -f2 | head -1)
     fi
 
     if [ -n "$PID" ]; then
@@ -46,7 +46,7 @@ fi
 
 # 如果仍然找不到PID
 if [ -z "$PID" ]; then
-    echo "未找到运行在端口 8000 上的服务"
+    echo "未找到运行在端口 13111 上的服务"
     echo "服务可能已经停止"
     # 清理可能存在的PID文件
     rm -f "$PID_FILE"

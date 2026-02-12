@@ -21,7 +21,7 @@ print("=" * 60)
 # 工作目录设置为 inference_service/，作为此项目的根目录
 try:
     subprocess.run(
-        [sys.executable, "-m", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"],
+        [sys.executable, "-m", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "13111", "--reload"],
         cwd=project_root,
         check=True
     )

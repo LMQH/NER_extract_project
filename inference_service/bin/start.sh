@@ -27,8 +27,8 @@ if ! python3 -m uvicorn --help &> /dev/null; then
 fi
 
 # 检查端口是否被占用
-if lsof -Pi :8000 -sTCP:LISTEN -t >/dev/null 2>&1; then
-    echo "警告: 端口 8000 已被占用"
+if lsof -Pi :13111 -sTCP:LISTEN -t >/dev/null 2>&1; then
+    echo "警告: 端口 13111 已被占用"
     echo "请先停止现有服务，或使用 stop.sh 脚本停止服务"
     exit 1
 fi
@@ -38,12 +38,12 @@ echo "Inference Service 启动 (FastAPI)"
 echo "============================================================"
 echo "项目目录: $PROJECT_ROOT"
 echo "正在启动服务..."
-echo "API文档: http://localhost:8000/docs"
-echo "API文档 (ReDoc): http://localhost:8000/redoc"
+echo "API文档: http://localhost:13111/docs"
+echo "API文档 (ReDoc): http://localhost:13111/redoc"
 echo "============================================================"
 echo "按 Ctrl+C 停止服务"
 echo "============================================================"
 
 # 启动FastAPI服务
 # 使用 reload=True 支持热重载（开发模式）
-python3 -m uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+python3 -m uvicorn app:app --host 0.0.0.0 --port 13111 --reload

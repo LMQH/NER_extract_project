@@ -35,7 +35,7 @@ if __name__ == "__main__":
     import uvicorn
 
     # 从环境变量读取端口
-    port = int(os.getenv('INFERENCE_PORT', '8000'))
+    port = int(os.getenv('INFERENCE_PORT', '13111'))
 
     logger.info("=" * 60)
     logger.info("Inference Service 启动")

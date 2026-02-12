@@ -19,7 +19,7 @@ class InferenceClient:
 
     def __init__(self):
         """初始化客户端"""
-        self.base_url = os.getenv('INFERENCE_SERVICE_URL', 'http://localhost:14467')
+        self.base_url = os.getenv('INFERENCE_SERVICE_URL', 'http://localhost:13111')
         self.timeout = float(os.getenv('INFERENCE_TIMEOUT', '30.0'))
         self.max_retries = int(os.getenv('INFERENCE_MAX_RETRIES', '3'))
 

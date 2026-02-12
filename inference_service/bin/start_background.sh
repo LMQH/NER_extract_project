@@ -47,8 +47,8 @@ if [ -f "$PID_FILE" ]; then
 fi
 
 # 检查端口是否被占用
-if lsof -Pi :8000 -sTCP:LISTEN -t >/dev/null 2>&1; then
-    echo "警告: 端口 8000 已被占用"
+if lsof -Pi :13111 -sTCP:LISTEN -t >/dev/null 2>&1; then
+    echo "警告: 端口 13111 已被占用"
     echo "请先停止现有服务，或使用 stop.sh 脚本停止服务"
     exit 1
 fi
@@ -62,7 +62,7 @@ echo "PID文件: $PID_FILE"
 echo "正在启动服务..."
 
 # 后台启动FastAPI服务（不使用reload，适合生产环境）
-nohup python3 -m uvicorn app:app --host 0.0.0.0 --port 8000 > "$LOG_FILE" 2>&1 &
+nohup python3 -m uvicorn app:app --host 0.0.0.0 --port 13111 > "$LOG_FILE" 2>&1 &
 NEW_PID=$!
 
 # 保存PID到文件
@@ -73,8 +73,8 @@ sleep 2
 
 if kill -0 "$NEW_PID" 2>/dev/null; then
     echo "服务已成功启动 (PID: $NEW_PID)"
-    echo "API文档: http://localhost:8000/docs"
-    echo "API文档 (ReDoc): http://localhost:8000/redoc"
+    echo "API文档: http://localhost:13111/docs"
+    echo "API文档 (ReDoc): http://localhost:13111/redoc"
     echo "============================================================"
     echo "使用以下命令查看日志: tail -f $LOG_FILE"
     echo "使用以下命令停止服务: $BIN_DIR/stop.sh"
