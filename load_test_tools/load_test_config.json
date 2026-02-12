@@ -1,0 +1,29 @@
+{
+  "_comment": "压测脚本配置文件 - 参数说明：",
+  "_comment_url": "url: API接口地址（必需，如果为空则必须通过命令行参数提供）",
+  "_comment_concurrent": "concurrent: 并发数（可选，默认10）。支持数组格式，如 [5, 10, 20, 30, 50] 将启用批量测试模式，依次测试每个值",
+  "_comment_total": "total: 总请求数（与duration二选一，设置为null则不使用）。支持数组格式启用批量测试",
+  "_comment_duration": "duration: 测试持续时间，单位秒（与total二选一，设置为null则不使用）。支持数组格式启用批量测试",
+  "_comment_content": "content: 请求内容（可选，默认使用示例地址）",
+  "_comment_timeout": "timeout: 请求超时时间，单位秒（可选，默认5）",
+  "_comment_t1": "t1: 快速请求阈值，单位秒（可选，默认1.0）。响应时间 < T1 的请求归类为 fast",
+  "_comment_t2": "t2: 慢速请求阈值，单位秒（可选，默认3.0）。T1 ≤ 响应时间 ≤ T2 归类为 slow，> T2 或超时归类为 bad",
+  "_comment_output_dir": "output_dir: 报告保存目录（可选，默认test/load_test/reports）",
+  "_comment_json": "json: 是否同时保存JSON格式报告（可选，默认false）",
+  "_comment_batch_mode": "batch_mode: 批量测试模式配置（可选）",
+  "_comment_batch_cooldown": "batch_mode.cooldown: 每次测试之间的冷却时间，单位秒（可选，默认5）",
+  
+  "url": "https://xxxx.com/ner_extract_info/api/extract",
+  "concurrent": [1,2,4,8,16,32],
+  "total": 100,
+  "duration": null,
+  "content": "广东省深圳市龙岗区坂田街道长坑路",
+  "timeout": 5,
+  "t1": 1.0,
+  "t2": 3.0,
+  "output_dir": "test/load_test/reports",
+  "json": false,
+  "batch_mode": {
+    "cooldown": 5
+  }
+}

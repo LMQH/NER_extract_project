@@ -1,0 +1,36 @@
+2026-02-12 15:55:39 - Inference_API - INFO - 正在初始化Inference Service...
+2026-02-12 15:55:39 - Inference_API - INFO - 日志文件: E:\lmqh_code\ai_code\ai_app\ner_extract_project\inference_service\logs\inference_20260212.log
+2026-02-12 15:55:39 - Inference_API - INFO - CORS允许的来源: ['*']
+2026-02-12 15:55:39 - Inference_API - INFO - CORS允许凭证: False
+2026-02-12 15:55:39 - Inference_API - INFO - 路由注册完成:
+2026-02-12 15:55:39 - Inference_API - INFO -   - POST /inference/extract
+2026-02-12 15:55:39 - Inference_API - INFO -   - GET  /inference/health
+2026-02-12 15:55:39 - Inference_API - INFO -   - GET  /inference/models
+2026-02-12 15:55:39 - Inference_API - INFO - Inference Service初始化完成
+2026-02-12 15:56:14 - Inference_API - INFO - 正在初始化Inference Service...
+2026-02-12 15:56:14 - Inference_API - INFO - 日志文件: E:\lmqh_code\ai_code\ai_app\ner_extract_project\inference_service\logs\inference_20260212.log
+2026-02-12 15:56:14 - Inference_API - INFO - CORS允许的来源: ['*']
+2026-02-12 15:56:14 - Inference_API - INFO - CORS允许凭证: False
+2026-02-12 15:56:14 - Inference_API - INFO - 路由注册完成:
+2026-02-12 15:56:14 - Inference_API - INFO -   - POST /inference/extract
+2026-02-12 15:56:14 - Inference_API - INFO -   - GET  /inference/health
+2026-02-12 15:56:14 - Inference_API - INFO -   - GET  /inference/models
+2026-02-12 15:56:14 - Inference_API - INFO - Inference Service初始化完成
+2026-02-12 15:56:21 - Inference_API - INFO - 正在初始化Inference Service...
+2026-02-12 15:56:21 - Inference_API - INFO - 日志文件: E:\lmqh_code\ai_code\ai_app\ner_extract_project\inference_service\logs\inference_20260212.log
+2026-02-12 15:56:21 - Inference_API - INFO - CORS允许的来源: ['*']
+2026-02-12 15:56:21 - Inference_API - INFO - CORS允许凭证: False
+2026-02-12 15:56:21 - Inference_API - INFO - 路由注册完成:
+2026-02-12 15:56:21 - Inference_API - INFO -   - POST /inference/extract
+2026-02-12 15:56:21 - Inference_API - INFO -   - GET  /inference/health
+2026-02-12 15:56:21 - Inference_API - INFO -   - GET  /inference/models
+2026-02-12 15:56:21 - Inference_API - INFO - Inference Service初始化完成
+2026-02-12 15:59:33 - Inference_API - INFO - 正在初始化Inference Service...
+2026-02-12 15:59:33 - Inference_API - INFO - 日志文件: E:\lmqh_code\ai_code\ai_app\ner_extract_project\inference_service\logs\inference_20260212.log
+2026-02-12 15:59:33 - Inference_API - INFO - CORS允许的来源: ['*']
+2026-02-12 15:59:33 - Inference_API - INFO - CORS允许凭证: False
+2026-02-12 15:59:33 - Inference_API - INFO - 路由注册完成:
+2026-02-12 15:59:33 - Inference_API - INFO -   - POST /inference/extract
+2026-02-12 15:59:33 - Inference_API - INFO -   - GET  /inference/health
+2026-02-12 15:59:33 - Inference_API - INFO -   - GET  /inference/models
+2026-02-12 15:59:33 - Inference_API - INFO - Inference Service初始化完成

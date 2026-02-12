@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "description": "MGeo模型标签到输出字段的映射关系配置",
+  "mappings": {
+    "ProvinceName": {
+      "entity_types": ["PB"],
+      "description": "省份名称",
+      "is_single_value": true
+    },
+    "CityName": {
+      "entity_types": ["PC"],
+      "description": "城市名称",
+      "is_single_value": true
+    },
+    "ExpAreaName": {
+      "entity_types": ["PD"],
+      "description": "区县名称",
+      "is_single_value": true
+    },
+    "StreetName": {
+      "entity_types": ["PE", "PF", "PH", "PS"],
+      "description": "街道名称（包括乡镇、街道、行政俗称/商圈、其它行政）",
+      "is_single_value": false
+    },
+    "AreasInfo": {
+      "entity_types": ["BS", "BL", "RD", "Brand", "CategorySuffix", "SS", "SA", "UD", "UE", "YA"],
+      "description": "区域信息（公交地铁站、线路、道路、品牌、类别后缀、分支词、方位修饰词、门址附属描述、门址东口南门、语义连接词）",
+      "is_single_value": false
+    },
+    "Address": {
+      "entity_types": ["PG", "UA", "UB", "UC", "Entity", "NumEng"],
+      "description": "详细地址（村庄、门址相关三个参数、POI一般名称、数字英文串）",
+      "is_single_value": false
+    },
+    "others": {
+      "entity_types": ["Yewu", "Desc", "BD"],
+      "description": "其他信息（业务词、修饰词、标点符号）",
+      "is_single_value": false,
+      "default_for_unmapped": true
+    }
+  },
+  "special_types": {
+    "phone_extraction": {
+      "entity_types": ["ZZ"],
+      "description": "用于提取电话号码的未知类型"
+    },
+    "name_extraction": {
+      "entity_types": ["ZZ"],
+      "description": "用于提取姓名的未知类型"
+    }
+  },
+  "address_range_types": {
+    "description": "用于确定地址范围，排除这些范围后提取姓名",
+    "entity_types": [
+      "PB", "PC", "PD",
+      "PF", "PG", "PH", "PS",
+      "BS", "BL", "RD", "Brand", "CategorySuffix", "SS", "SA", "UD", "UE", "YA",
+      "UA", "UB", "UC", "Entity", "NumEng"
+    ]
+  }
+}

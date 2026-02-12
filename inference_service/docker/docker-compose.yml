@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  inference-service:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: ner-inference-service
+    ports:
+      - "14467:14467"
+    environment:
+      - INFERENCE_PORT=14467
+      - MODEL_PATH=models/
+      - MODEL_EXISTS=true
+      - CORS_ALLOW_ORIGINS=*
+      - LOG_LEVEL=INFO
+    volumes:
+      # 挂载模型目录（如果需要本地更新模型）
+      - ../models:/app/models
+      # 挂载日志目录
+      - ../logs:/app/logs
+      # 挂载配置文件
+      - ../dev.env:/app/dev.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:14467/inference/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    # 资源限制
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
